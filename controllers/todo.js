@@ -16,8 +16,8 @@ class TodoController extends Telegram.TelegramBaseController {
   getHandler($) {
     // let todo = $.message.text.split(' ').slice(1).join(' ');
     $.getUserSession('todos').then(todos => {
-      $.sendMessage(`Your todos: ${todos}`);
-      // $.sendMessage(this._serializeList(todos), { parse_mode: 'Markdown' });
+      // $.sendMessage(`Your todos: ${todos}`);
+      $.sendMessage(this._serializeList(todos), { parse_mode: 'Markdown' });
     });
   }
 
