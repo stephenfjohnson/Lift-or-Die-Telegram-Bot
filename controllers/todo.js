@@ -1,3 +1,5 @@
+'use strict';
+
 const Telegram = require('telegram-node-bot');
 
 class TodoController extends Telegram.TelegramBaseController {
@@ -27,14 +29,23 @@ class TodoController extends Telegram.TelegramBaseController {
       'getCommand': 'getHandler'
     };
   }
-
+  // My serialize function
   _serializeList(todoList) {
-    let serialize = '*Your Todos:*\n';
+    let serialized = '*Your Todos:*\n';
     todoList.forEach((t, i) => {
       serialized += `*${i}* - ${t}\n`;
     });
     return serialized;
   }
+
+  // // His serialize function
+  // _serializeList(todoList) {
+  //   let serialized = '*Your Todos:*\n\n';
+  //   todoList.forEach((t, i) => {
+  //     serialized += `*${i}* - ${t}\n`;
+  //   });
+  //   return serialized;
+  //  }
 }
 
 module.exports = TodoController;
